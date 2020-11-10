@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ご予約フォーム</title>
+  
+  <!- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <!-- Font Awesomeのアイコンフォント -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- 自サイトのCSS -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div id="main" class="view">
+    <header class="border-bottom pl-2">
+      <h2>予約フォーム</h2>
+    </header>
+  
+    <div class="wrapper">
+      
+      <div class="steps mt-4">
+        <div class="step1">
+          <p>STEP1<br>情報の入力</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step">
+          <p>STEP2<br>入力内容の確認</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step">
+          <p>STEP3<br>受付完了</p>
+        </div>
+      </div>
+        
+      <div>
+        <form id="contact-form">
+          <div class="traveler_info mt-5">
+            <h5><i class="fas fa-address-card mr-1"></i>予約者情報</h5>
+            <div class="traveler_info_body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>予約者氏名<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="user_name">
+                    <div class="user_sei">
+                      姓<input type="text" id="user_sei" class="form-control mr-5" placeholder="例）山田" required>
+                    </div>
+                    <div class="user_mei">
+                      名<input type="text" id="user_mei" class="form-control" placeholder="例）太郎" required>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>予約者氏名カナ<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="user_name">
+                    <div class="user_sei">
+                      セイ<input type="text" id="user_sei_kana" class="form-control mr-5" placeholder="例）ヤマダ" required>
+                    </div>
+                    <div class="user_mei">
+                      メイ<input type="text" id="user_mei_kana" class="form-control" placeholder="例）タロウ" required>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>メールアドレス<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td>
+                    <input type="email" class="form-control" id="user_email" placeholder="例）sample@sato.com" required>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+            
+          <div class="reservation_info mt-5">
+            <h5><i class="fas fa-bed mr-1"></i>宿泊予約</h5>
+            <div class="reservaton_info_body">
+              <table class="table table-bordered">
+                <tr>
+                  <th>チェックイン日<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="checkin_date">
+                    <input type="date" id="checkin_date" class="form-control" value="2020-01-01" required>
+                  </td>
+                </tr>
+                <tr>
+                  <th>泊数<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td>
+                    <select name="hakusu" id="hakusu" class="form-control hakusu" required>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>チェックイン予定時間<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td>
+                    <select name="check_in_time" id="check_in_time" class="form-control check_in_time" required>
+                      <option hidden>時間を選択</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>宿泊人数<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="traveler_count">
+                    <div class="mr-3">
+                      <label for="otoko">大人男性</label>
+                      <input type="number" class="form-control" id="otoko" value="0" required>
+                    </div>
+                    <div class="mr-3">
+                      <label for="onna">大人女性</label>
+                      <input type="number" class="form-control" id="onna" value="0" required>
+                    </div>
+                    <div class="mr-3">
+                      <label for="syogakusei">小学生</label>
+                      <input type="number" class="form-control" id="syogakusei" value="0" required>
+                    </div>
+                    <div>
+                      <label for="youzi">幼児(3歳以下)</label>
+                      <input type="number" class="form-control" id="youzi" value="0" required>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="reservation_info_body2">
+              <table class="table table-bordered">
+                <tr>
+                  <th>宿泊代表者名<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="reader_name">
+                    <div class="reader_sei">
+                      姓<input type="text" id="reader_sei" class="form-control mr-5" placeholder="例）山田" required>
+                    </div>
+                    <div class="reader_mei">
+                      名<input type="text" id="reader_mei" class="form-control" placeholder="例）太郎" required>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>宿泊代表者名カナ<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td class="reader_name">
+                    <div class="reader_sei">
+                      セイ<input type="text" id="reader_sei_kana" class="form-control mr-5" placeholder="例）ヤマダ" required>
+                    </div>
+                    <div class="reader_mei">
+                      メイ<input type="text" id="reader_mei_kana" class="form-control" placeholder="例）タロウ" required>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>住所<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td>
+                    <div class="h-adr">
+                      <span class="p-country-name" style="display:none;">Japan</span>
+                      <div class="form-yubinbango">
+                        <span class="mt-1 mr-2">〒</span><input type="text" id="bangou1" class="p-postal-code form-control" maxlength="3" required>
+                        <span class="mx-1 mt-1">-</span><input type="text" id="bangou2" class="p-postal-code form-control" maxlength="4" required>
+                      </div>
+                      <div class="my-2">※郵便番号を入力すると住所が自動で表示されます</div>
+                      <div class="form-jusyo">
+                        <select id="region" class="p-region form-control mr-2" required>
+                          <option value="">県を選択</option>
+                          <option value="北海道">北海道</option>
+                          <option value="青森県">青森県</option>
+                          <option value="岩手県">岩手県</option>
+                          <option value="宮城県">宮城県</option>
+                          <option value="秋田県">秋田県</option>
+                          <option value="山形県">山形県</option>
+                          <option value="福島県">福島県</option>
+                          <option value="茨城県">茨城県</option>
+                          <option value="栃木県">栃木県</option>
+                          <option value="群馬県">群馬県</option>
+                          <option value="埼玉県">埼玉県</option>
+                          <option value="千葉県">千葉県</option>
+                          <option value="東京都">東京都</option>
+                          <option value="神奈川県">神奈川県</option>
+                          <option value="新潟県">新潟県</option>
+                          <option value="富山県">富山県</option>
+                          <option value="石川県">石川県</option>
+                          <option value="福井県">福井県</option>
+                          <option value="山梨県">山梨県</option>
+                          <option value="長野県">長野県</option>
+                          <option value="岐阜県">岐阜県</option>
+                          <option value="静岡県">静岡県</option>
+                          <option value="愛知県">愛知県</option>
+                          <option value="三重県">三重県</option>
+                          <option value="滋賀県">滋賀県</option>
+                          <option value="京都府">京都府</option>
+                          <option value="大阪府">大阪府</option>
+                          <option value="兵庫県">兵庫県</option>
+                          <option value="奈良県">奈良県</option>
+                          <option value="和歌山県">和歌山県</option>
+                          <option value="鳥取県">鳥取県</option>
+                          <option value="島根県">島根県</option>
+                          <option value="岡山県">岡山県</option>
+                          <option value="広島県">広島県</option>
+                          <option value="山口県">山口県</option>
+                          <option value="徳島県">徳島県</option>
+                          <option value="香川県">香川県</option>
+                          <option value="愛媛県">愛媛県</option>
+                          <option value="高知県">高知県</option>
+                          <option value="福岡県">福岡県</option>
+                          <option value="佐賀県">佐賀県</option>
+                          <option value="長崎県">長崎県</option>
+                          <option value="熊本県">熊本県</option>
+                          <option value="大分県">大分県</option>
+                          <option value="宮崎県">宮崎県</option>
+                          <option value="鹿児島県">鹿児島県</option>
+                          <option value="沖縄県">沖縄県</option>
+                        </select>
+                        <input type="text" id="jusyo" class="p-locality p-street-address p-extended-address form-control" placeholder="例）大阪市北区梅田五丁目一番地 sampleビル101号室" required>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>電話番号<span class="badge badge-danger ml-2">※必須</span></th>
+                  <td>
+                    <input type="tel" id="tel-number" class="form-control" placeholder="例）01099990000" maxlength="11" required>
+                  </td>
+                </tr>
+                <tr>
+                  <th>年代</th>
+                  <td>
+                    <select name="user-age" id="user_age" class="form-control user-age" required>
+                      <option value="年代を選択">年代を選択</option>
+                      <option value="10代">10代</option>
+                      <option value="20-24才">20-24才</option>
+                      <option value="25-29才">25-29才</option>
+                      <option value="30-34才">30-34才</option>
+                      <option value="35-39才">35-39才</option>
+                      <option value="40-49才">40-49才</option>
+                      <option value="50-59才">50-59才</option>
+                      <option value="60才以上">60才以上</option>
+                    </select>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <div class="terms my-4">
+            <h5><i class="fas fa-book mr-1"></i>利用規約</h5>
+            <div class="terms_body"></div>
+          </div>
+      
+          <div class="button-area">
+            <button type="submit" class="btn btn-success mb-4" id="next-button">次へ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div id="confirmation" class="view">
+    <header class="border-bottom pl-2">
+      <h2>予約フォーム</h2>
+    </header>
+    
+    <div class="wrapper">
+      <div class="steps mt-4">
+        <div class="step">
+          <p>STEP1<br>情報の入力</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step2">
+          <p>STEP2<br>入力内容の確認</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step">
+          <p>STEP3<br>受付完了</p>
+        </div>
+      </div>
+      
+      <div class="confirmation-area">
+        <div class="Traveler_info mt-5">
+          <h5>予約者情報</h5>
+          <div class="Traveler_info_body">
+            <table class="table table-bordered">
+              <tr>
+                <th>予約者名</th>
+                <td><div class="User_Name"></div></td>
+              </tr>
+              <tr>
+                <th>予約者名カナ</th>
+                <td><div class="User_Kana"></div></td>
+              </tr>
+              <tr>
+                <th>メールアドレス</th>
+                <td><div class="User_Email"></div></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="Reservaton_info mt-5">
+          <h5>宿泊情報</h5>
+          <div class="Reservaton_info_body">
+            <table class="table table-bordered">
+              <tr>
+                <th>チェックイン日</th>
+                <td><div class="CheckIn_Date"></div></td>
+              </tr>
+              <tr>
+                <th>泊数</th>
+                <td><div class="Hakusu_Count"></div></td>
+              </tr>
+              <tr>
+                <th>チェックイン予定時間</th>
+                <td><div class="CheckIn_Time"></div></td>
+              </tr>
+              <tr>
+                <th>宿泊人数</th>
+                <td class="traveler_count">
+                  <div class="mr-3">
+                    <label for="Otoko">大人男性</label>
+                    <div class="Otoko"></div>
+                  </div>
+                  <div class="mr-3">
+                    <label for="Onna">大人女性</label>
+                    <div class="Onna"></div>
+                  </div>
+                  <div class="mr-3">
+                    <label for="Syogakusei">小学生</label>
+                    <div class="Syogakusei"></div>
+                  </div>
+                  <div>
+                    <label for="Youzi">幼児（3歳以下）</label>
+                    <div class="Youzi"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>宿泊代表者名</th>
+                <td><div class="Reader_Name"></div></td>
+              </tr>
+              <tr>
+                <th>宿泊代表者名カナ</th>
+                <td> <div class="Reader_Kana"></div></td>
+              </tr>
+              <tr>
+                <th>住所</th>
+                <td>
+                  <div class="Yubinbangou"></div>
+                  <div class="Jusyo-group">
+                    <div class="Region mr-3"></div>
+                    <div class="Jusyo"></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>電話番号</th>
+                <td><div class="Tel_Number"></div></td>
+              </tr>
+              <tr>
+                <th>年代</th>
+                <td><div class="User_Age"></div></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <div class="confirmation-text">
+        <p>こちらの内容でお間違いないでしょうか？よろしければ送信ボタンを押してください。</p>
+      </div>
+      
+      <div class="button-area">
+        <button type="submit" class="btn mb-2" id="complete-button">送信</button>
+        <button type="submit" class="btn btn-secondary  mb-4" id="return-button">戻る</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="complete">
+    <header class="border-bottom pl-2">
+      <h2>予約フォーム</h2>
+    </header>
+    
+    <div class="wrapper">
+      
+      <div class="steps mt-4">
+        <div class="step">
+          <p>STEP1<br>情報の入力</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step">
+          <p>STEP2<br>入力内容の確認</p>
+        </div>
+        <i class="fas fa-caret-right fa-2x mt-2 mx-4"></i>
+        <div class="step3">
+          <p>STEP3<br>受付完了</p>
+        </div>
+      </div>
+      
+      <div class="container mt-5">
+        <h3 class="text-center">ありがとうございました。送信を受け付けました。</h3>
+        <div class="text-center mt-5">
+          <button type="submit" class="btn btn-secondary mb-4" id="top-button">戻る</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+   
+  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+  
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyD7qYoQtvU6YFvyjg9Koz3s3FhQ58CbNMg",
+      authDomain: "sample-form-c5135.firebaseapp.com",
+      databaseURL: "https://sample-form-c5135.firebaseio.com",
+      projectId: 'sample-form-c5135',
+      storageBucket: "sample-form-c5135.appspot.com",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+  
+  <script src="./js/yubinbango.js" charset="UTF-8"></script>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  
+  <script src="main.js"></script>
+
+</body>
+</html>
