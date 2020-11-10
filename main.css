@@ -1,0 +1,142 @@
+/* 全体に関すること */
+
+th {
+  background-color: #EEEEEE;
+  width: 250px;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+
+
+/* ステップ */
+
+.steps {
+  display: flex;
+  text-align: center;
+}
+
+.step1,.step2,.step3,.step {
+  border-radius: 50px;
+  width: 250px;
+  height: 50px;
+}
+
+.step1,.step2,.step3 {
+  background-color: navy;
+  color: white;
+}
+
+.step {
+  background-color: #EEEEEE;
+}
+
+
+
+/* 予約者情報 */
+
+.user_name {
+  display: flex;
+}
+
+.user_sei > input,.user_name_mei > input {
+  width: 200px;
+}
+
+#user_email {
+  width: 550px;
+}
+
+
+
+/* 宿泊情報 */
+.reader_name {
+  display: flex;
+}
+
+.checkin_date > input, .check_in_time, .user-age, .p-postal-code,.p-region{
+  width: 160px;
+}
+
+.hakusu {
+  width: 60px;
+}
+
+.reader_sei > input,.reader_mei > input,.tel-number {
+  width: 200px;
+}
+
+.traveler_count,.form-yubinbango,.form-jusyo {
+  display: flex;
+}
+
+.traveler_count > div {
+  width: 100px;
+}
+
+#otoko,#onna,#syogakusei,#youzi {
+  width: 60px;
+}
+
+
+.terms_body {
+  background-color: #EEEEEE;
+  height: 250px;
+}
+
+.button-area {
+  width: 300px;
+  margin: 0 auto;
+}
+#next-button {
+  background-color: navy;
+  color: white;
+  width: 300px;
+}
+
+
+/* 入力内容確認画面 */
+#confirmation {
+  display: none;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.traveler_count > div {
+  width: 130px;
+}
+
+.Jusyo-group {
+  display: flex;
+}
+
+.confirmation-text {
+  width: 900px;
+  text-align: center;
+  color: red;
+}
+
+#complete-button {
+  background-color: navy;
+  color: white;
+  width: 300px;
+}
+
+#return-button {
+  width: 300px;
+}
+
+/* 送信完了画面 */
+
+#complete {
+  display: none;
+}
+
+#top-button {
+  width: 300px;
+}
